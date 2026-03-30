@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Library System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <h1><i class="fas fa-book-reader"></i> MyLib</h1>
+            <nav class="nav-links">
+                <a href="#" class="nav-item active" data-section="allBooks"><i class="fas fa-search-plus"></i> Browse Books</a>
+                <a href="#" class="nav-item" data-section="myBooks"><i class="fas fa-bookmark"></i> My Issued Books</a>
+            </nav>
+            <a href="#" id="logoutBtn" class="nav-item logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h2 id="sectionTitle">Available Books</h2>
+                <div class="user-info">
+                    <span id="userNameDisplay">User Name</span>
+                </div>
+            </header>
+
+            <!-- All Books Section -->
+            <section id="allBooksSection" class="dashboard-section">
+                <div class="header-actions" style="margin-bottom: 20px;">
+                    <input type="text" id="userBookSearch" placeholder="Search by title, author, or category..." style="padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); width: 100%;">
+                </div>
+                <div class="table-container">
+                    <table id="userBooksTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- My Books Section -->
+            <section id="myBooksSection" class="dashboard-section" style="display: none;">
+                <div class="table-container">
+                    <table id="myIssuedTable">
+                        <thead>
+                            <tr>
+                                <th>Book Title</th>
+                                <th>Issue Date</th>
+                                <th>Due Date</th>
+                                <th>Fine (₹)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/books.js"></script>
+    <script src="js/transactions.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

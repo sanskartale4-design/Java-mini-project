@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <script>
+        const user = JSON.parse(sessionStorage.getItem('currentUser'));
+        if (!user) {
+            window.location.href = 'login.html';
+        } else if (user.role === 'admin') {
+            window.location.href = 'admin-dashboard.html';
+        } else {
+            window.location.href = 'user-dashboard.html';
+        }
+    </script>
+</body>
+</html>
